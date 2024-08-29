@@ -108,9 +108,23 @@ import java.util.Scanner;
 public class exer8 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        
         System.out.print("Digite o número do cartão de crédito: ");
-        String cartao = scanner.nextLine();
-        String mascarado = "*".repeat(cartao.length() - 4) + cartao.substring(cartao.length() - 4);
+        String cartao = scanner.nextLine().trim();
+        
+        
+        if (cartao.length() < 4 || !cartao.matches("\\d+")) {
+            System.out.println("Número de cartão inválido. Certifique-se de que o número contém apenas dígitos e tem pelo menos 4 dígitos.");
+            return;
+        }
+        
+       
+        StringBuilder mascarado = new StringBuilder();
+        for (int i = 0; i < cartao.length() - 4; i++) {
+            mascarado.append('*');
+        }
+        mascarado.append(cartao.substring(cartao.length() - 4));
+        
         System.out.println("Cartão mascarado: " + mascarado);
     }
 }
