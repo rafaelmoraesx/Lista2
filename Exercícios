@@ -1,0 +1,156 @@
+1.
+import java.util.Scanner;
+
+public class exer1 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Digite uma palavra: ");
+        String palavra = scanner.nextLine();
+        int quantidadeLetras = palavra.length();
+        System.out.println("A palavra possui " + quantidadeLetras + " letras.");
+    }
+}
+
+2.
+import java.util.Scanner;
+
+public class exer2 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Digite uma frase: ");
+        String frase = scanner.nextLine();
+        String fraseModificada = frase.replace('a', '*');
+        System.out.println("Frase modificada: " + fraseModificada);
+    }
+}
+
+3.
+import java.util.Scanner;
+
+public class exer3 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Digite uma palavra: ");
+        String palavra = scanner.nextLine();
+        String palavraInvertida = new StringBuilder(palavra).reverse().toString();
+        System.out.println("A palavra invertida é: " + palavraInvertida);
+    }
+}
+
+4.
+import java.util.Scanner;
+
+public class exer4 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Digite uma palavra: ");
+        String palavra = scanner.nextLine().toLowerCase();
+        String palavraInvertida = new StringBuilder(palavra).reverse().toString();
+        if (palavra.equals(palavraInvertida)) {
+            System.out.println("A palavra é um palíndromo.");
+        } else {
+            System.out.println("A palavra não é um palíndromo.");
+        }
+    }
+}
+
+5.
+import java.util.Scanner;
+
+public class exer5 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Digite uma frase: ");
+        String frase = scanner.nextLine();
+        String[] palavras = frase.split("\\s+");
+        int quantidadePalavras = palavras.length;
+        System.out.println("A frase possui " + quantidadePalavras + " palavras.");
+    }
+}
+
+6.
+import java.util.Scanner;
+
+public class exer6 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Digite o nome completo: ");
+        String nomeCompleto = scanner.nextLine();
+        String[] partes = nomeCompleto.split(" ");
+        StringBuilder nomeFormatado = new StringBuilder();
+        for (String parte : partes) {
+            if (!parte.isEmpty()) {
+                nomeFormatado.append(Character.toUpperCase(parte.charAt(0)))
+                             .append(parte.substring(1).toLowerCase())
+                             .append(" ");
+            }
+        }
+        System.out.println("Nome formatado: " + nomeFormatado.toString().trim());
+    }
+}
+
+7.
+import java.util.Scanner;
+
+public class exer7 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Digite seu endereço de email: ");
+        String email = scanner.nextLine();
+        String dominio = email.substring(email.indexOf('@') + 1);
+        System.out.println("Domínio do email: " + dominio);
+    }
+}
+
+8.
+import java.util.Scanner;
+
+public class exer8 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Digite o número do cartão de crédito: ");
+        String cartao = scanner.nextLine();
+        String mascarado = "*".repeat(cartao.length() - 4) + cartao.substring(cartao.length() - 4);
+        System.out.println("Cartão mascarado: " + mascarado);
+    }
+}
+
+9.
+import java.util.Scanner;
+
+public class exer9 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Digite uma frase com possíveis espaços extras: ");
+        String frase = scanner.nextLine();
+        String fraseFormatada = frase.trim().replaceAll("\\s+", " ");
+        System.out.println("Frase formatada: " + fraseFormatada);
+    }
+}
+
+10.
+import java.util.Scanner;
+
+public class exer10 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Digite uma palavra: ");
+        String palavra = scanner.nextLine().toLowerCase();
+        String vogais = "aeiou";
+        String consoantes = "bcdfghjklmnpqrstvwxyz";
+
+        int quantidadeVogais = 0;
+        int quantidadeConsoantes = 0;
+
+        for (char letra : palavra.toCharArray()) {
+            if (vogais.indexOf(letra) != -1) {
+                quantidadeVogais++;
+            } else if (consoantes.indexOf(letra) != -1) {
+                quantidadeConsoantes++;
+            }
+        }
+
+        System.out.println("Quantidade de vogais: " + quantidadeVogais);
+        System.out.println("Quantidade de consoantes: " + quantidadeConsoantes);
+    }
+}
